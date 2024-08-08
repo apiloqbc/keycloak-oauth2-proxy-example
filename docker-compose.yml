@@ -6,7 +6,7 @@ services:
     build: .
 
   oauth2-proxy:
-    image: bitnami/oauth2-proxy:7.3.0
+    image: bitnami/oauth2-proxy:7.6.0
     depends_on:
       - redis
     command:
@@ -24,8 +24,10 @@ services:
       OAUTH2_PROXY_CLIENT_SECRET: <<insert the okta client secrets>>
 
       OAUTH2_PROXY_SKIP_JWT_BEARER_TOKENS: true
-      OAUTH2_PROXY_OIDC_EXTRA_AUDIENCES: api://default
+      OAUTH2_PROXY_OIDC_EXTRA_AUDIENCES: account
       OAUTH2_PROXY_OIDC_EMAIL_CLAIM: sub
+      OAUTH2_PROXY_EXTRA_JWT_ISSUERS: http://192.168.1.156:8081/realms/myrealm2=account
+
 
       OAUTH2_PROXY_SET_XAUTHREQUEST: true
       OAUTH2_PROXY_PASS_ACCESS_TOKEN: true
