@@ -1,2 +1,32 @@
 /.idea/
 /target/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Secrets and sensitive files
+secrets/
+*.key
+*.pem
+*.crt
+
+# Keycloak exports and sensitive configs
+imports/realm-export.json
+imports/*.json
+keycloak-exports/
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
